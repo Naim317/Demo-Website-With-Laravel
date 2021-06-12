@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/toastr.css')}}">
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -36,6 +37,8 @@
 <script src="{{asset('js/datatables-select.min.js')}}"> </script>
 <script src="{{asset('js/custom.js')}}"> </script>
 <script src="{{asset('js/axios.min.js')}}"></script>
+<script src="{{asset('js/toastr.js')}}"></script>
+
 
 
 @yield('script')
