@@ -1,104 +1,154 @@
-//VisitorTable
-
-$(document).ready(function() {
-    $('#VisitorDt').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-});
-
 //For Services Table
-function getServicesData() {
-    axios.get('/getServicesData')
+function getCoursesData() {
+    axios.get('/getCoursesData')
         .then(function(response) {
 
             if (response.status == 200) {
 
-                $('#mainDiv').removeClass('d-none');
-                $('#loaderDiv').addClass('d-none');
+                $('#mainDivCourse').removeClass('d-none');
+                $('#loaderDivCourse').addClass('d-none');
 
-                $('#service_table').empty();
+                $('#courses_table').empty();
 
 
                 var jsonData = response.data;
 
                 $.each(jsonData, function(i, item) {
                     $('<tr>').html(
-                        "<td><img class='table-img' src=" + jsonData[i].service_img + "></td>" +
-                        "<td>> " + jsonData[i].service_name + "</td>" +
-                        "<td>" + jsonData[i].service_des + "</td>" +
-                        "<td><a class='ServiceEditBtn'  data-id=" + jsonData[i].id + " ><i  class='fas fa-edit'></i></a></td>" +
-                        "<td><a class='ServiceDeleteBtn' data-id=" + jsonData[i].id + " ><i class='fas fa-trash-alt'></td>"
 
-                    ).appendTo('#service_table');
+                        "<td> " + jsonData[i].course_name + "</td>" +
+                        "<td> " + jsonData[i].course_fee + "</td>" +
+                        "<td> " + jsonData[i].course_totalclass + "</td>" +
+                        "<td> " + jsonData[i].course_totalenroll + "</td>" +
+                        "<td><a class='courseViewDetailsBtn'  data-id=" + jsonData[i].id + " ><i  class='fas fa-eye'></i></a></td>" +
+                        "<td><a class='courseEditBtn'  data-id=" + jsonData[i].id + " ><i  class='fas fa-edit'></i></a></td>" +
+                        "<td><a class='courseDeleteBtn' data-id=" + jsonData[i].id + " ><i class='fas fa-trash-alt'></td>"
+
+                    ).appendTo('#courses_table');
                 });
 
-                //Services Table Delete Btn Icon
-
-                $('.ServiceDeleteBtn').click(function() {
-
-                    var id = $(this).data('id');
-                    $('#ServiceDeleteID').html(id);
-                    $('#deleteModal').modal('show');
-                })
-
-                //Services Table Delete Btn Icon modal
-
-                $('#ServiceDeleteConfirmBtn').click(function() {
-                    var id = $('#ServiceDeleteID').html();
-                    ServicesDataDelete(id);
-
-
-                })
-
-                //Services Table Delete Btn Icon
-                $('.ServiceEditBtn').click(function() {
-                    var id = $(this).data('id');
-                    $('#ServiceEditID').html(id);
-
-                    $('#editModal').modal('show');
-                })
-
-
-
-
-
+             
             } else {
 
-                $('#loaderDiv').addClass('d-none');
-                $('#wrongDiv').removeClass('d-none');
+                $('#loaderDivCourse').addClass('d-none');
+                $('#wrongDivCourse').removeClass('d-none');
 
             }
 
         }).catch(function(error) {
-            $('#loaderDiv').addClass('d-none');
-            $('#wrongDiv').removeClass('d-none');
+            $('#loaderDivCourse').addClass('d-none');
+            $('#wrongDivCourse').removeClass('d-none');
 
         });
 }
 
-////Services Delete
 
-function ServicesDataDelete(deleteId) {
-    axios.post('/serviceDelete', {
-            id: deleteId
+
+//Course add new button click
+
+$('#addNewCourseBtnID').click(function(){
+    $('#addCourseModal').modal('show');
+
+})
+
+
+ //Courses TableAdd New Course Btn Icon in Modal
+
+ $('#CourseAddConfirmBtn').click(function() {
+    var course_name = $('#CourseNameId').val();
+    var course_des = $('#CourseDesId').val();
+    var course_fee = $('#CourseFeeId').val();
+    var course_totalenroll = $('#CourseEnrollId').val();
+    var course_totalclass = $('#CourseClassId').val();
+    var course_link = $('#CourseLinkId').val();
+    var course_img = $('#CourseImgId').val();
+    CourseAdd(course_name,course_des,course_fee,course_totalenroll,course_totalclass,course_link,course_img);
+
+
+})
+
+
+
+
+//Course add method
+
+function CourseAdd(CourseName,CourseDes,CourseFee,CourseEnroll,CourseClass,CourseLink,CourseImg) {
+   
+    if(CourseName.length==0){
+        toastr.error('Course Name is Empty');
+        
+    }
+
+    else if(CourseDes.length==0){
+        toastr.error('Course Description is Empty');
+        
+    }
+    else if(CourseFee.length==0){
+        toastr.error('Course Fee is Empty');
+        
+    }
+    else if(CourseEnroll.length==0){
+        toastr.error('Course Enroll is Empty');
+        
+    }
+    else if(CourseClass.length==0){
+        toastr.error('Course Class is Empty');
+        
+    }
+    else if(CourseLink.length==0){
+        toastr.error('Course Link is Empty');
+        
+    }
+
+    else if(CourseImg.length==0){
+        toastr.error('Course Image is Empty');
+        
+    }
+
+    else{
+        $('#CourseAddConfirmBtn').html("<div class='spinner-border spinner-border-sm' role='status'></div>")  //Animation
+
+        axios.post('/coursesAdd', {
+            course_name: CourseName,
+            course_des: CourseDes,
+            course_fee: CourseFee,
+            course_totalenroll: CourseEnroll,
+            course_totalclass: CourseClass,
+            course_link: CourseLink,
+            course_img: CourseImg 
         })
         .then(function(response) {
-            if (response.data == 1) {
-                $('#deleteModal').modal('hide');
-                toastr.success('Delete Successful');
-                getServicesData();
-
-            } else {
-                $('#deleteModal').modal('hide');
-                toastr.error('Delete Failed');
-                getServicesData();
+            $('#CourseAddConfirmBtn').html("Save")
+            if(response.status==200){
+                if (response.data == 1) {
+                    $('#addCourseModal').modal('hide');
+                    toastr.success('Add Successful');
+                    getCoursesData();
+    
+                } else {
+                    $('#addCourseModal').modal('hide');
+                    toastr.success('Nothing Added!!!');
+                    getCoursesData();
+    
+                }
 
             }
+            else{
+                $('#addCourseModal').modal('hide');
+                toastr.error('Something Went Wrong!!!');
+
+            }
+           
 
         })
         .catch(function(error) {
-
-
+            $('#addCourseModal').modal('hide');
+            toastr.error('Something Went Wrong!!!');
+          
 
         });
+
+    }
+
 
 }

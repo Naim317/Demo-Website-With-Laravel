@@ -14,6 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'HomeController@HomeIndex');
 Route::get('/visitor', 'VisitorController@VisitorIndex');
+
+//Service Part Management
 Route::get('/service', 'ServiceController@ServiceIndex');
 Route::get('/getServicesData', 'ServiceController@getServicesData');
 Route::post('/serviceDelete', 'ServiceController@serviceDelete');
+Route::post('/ServicesDetails', 'ServiceController@getServicesDetails');
+Route::post('/ServicesUpdate', 'ServiceController@serviceUpdate');
+Route::post('/serviceAdd', 'ServiceController@serviceAdd');
+
+
+//Courses Part Management
+Route::get('/courses', 'CoursesController@CoursesIndex');
+Route::get('/getCoursesData', 'CoursesController@getCoursesData');
+Route::post('/CoursesDelete', 'CoursesController@CoursesDelete');
+Route::post('/getCoursesDetails', 'CoursesController@getCoursesDetails');
+Route::post('/coursesUpdate', 'CoursesController@coursesUpdate');
+Route::post('/coursesAdd', 'CoursesController@coursesAdd');
