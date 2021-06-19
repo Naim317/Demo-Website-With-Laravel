@@ -28,6 +28,6 @@ Route::post('/serviceAdd', 'ServiceController@serviceAdd');
 Route::get('/courses', 'CoursesController@CoursesIndex');
 Route::get('/getCoursesData', 'CoursesController@getCoursesData');
 Route::post('/CoursesDelete', 'CoursesController@CoursesDelete');
-Route::post('/getCoursesDetails', 'CoursesController@getCoursesDetails');
+Route::post('/CoursesDetails', 'CoursesController@getCoursesDetails');
 Route::post('/coursesUpdate', 'CoursesController@coursesUpdate');
 Route::post('/coursesAdd', 'CoursesController@coursesAdd');

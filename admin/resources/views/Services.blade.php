@@ -10,7 +10,7 @@
 
 
 
-<table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<table id="ServiceTableID" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th class="th-sm">Image</th>
@@ -62,7 +62,7 @@
     <div class="modal-content">
     
       <div class="modal-body text-center p-3"> <h5 class="m-3">Do you want to Delete??</h5>
-      <h5 id="ServiceDeleteID" class="m-3"></h5>
+      <h5 id="ServiceDeleteID" class="m-3  d-none"></h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">
@@ -89,7 +89,8 @@
     <div class="modal-content">
     
       <div class="modal-body text-center p-3"> 
-      <h5 id="ServiceEditID" class="m-3"></h5>
+      <h5 class="modal-title mb-3">Edit Service Details</h5>
+      <h5 id="ServiceEditID" class="m-3  d-none"></h5>
       <div id="ServiceEditForm" class="d-none w-100">
       <input type="text" id="ServiceNameID" class="form-control mb-3" placeholder="Service Name" />
     <input type="text" id="ServiceDesID" class="form-control mb-3" placeholder="Service Description" />
@@ -113,7 +114,7 @@
   </div>
 </div>
 
-<!-- Edit/UpdateModal -->
+<!-- Add Modal -->
 
 <div
   class="modal fade"
@@ -166,6 +167,7 @@ function getServicesData() {
                 $('#mainDiv').removeClass('d-none');
                 $('#loaderDiv').addClass('d-none');
 
+                $('#ServiceTableID').DataTable().destroy();
                 $('#service_table').empty();
 
 
@@ -201,6 +203,8 @@ function getServicesData() {
                     ServicesUpdateDetails(id)
                     $('#editModal').modal('show');
                 })
+                $('#ServiceTableID').DataTable({"order":false});
+                $('.dataTables_length').addClass('bs-select');
 
         
 
