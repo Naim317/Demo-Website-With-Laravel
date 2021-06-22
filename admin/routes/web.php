@@ -31,3 +31,12 @@ Route::post('/CoursesDelete', 'CoursesController@CoursesDelete');
 Route::post('/CoursesDetails', 'CoursesController@getCoursesDetails');
 Route::post('/coursesUpdate', 'CoursesController@coursesUpdate');
 Route::post('/coursesAdd', 'CoursesController@coursesAdd');
+
+//Project Part Management
+
+Route::get('/Project', 'ProjectController@ProjectsIndex');
+Route::get('/getProjectsData', 'ProjectController@getProjectsData');
+Route::post('/ProjectsDelete', 'ProjectController@ProjectsDelete');
+Route::post('/ProjectsDetails', 'ProjectController@getProjectsDetails');
+Route::post('/ProjectsUpdate', 'ProjectController@ProjectsUpdate');
+Route::post('/ProjectsAdd', 'ProjectController@ProjectsAdd');
