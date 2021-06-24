@@ -7,6 +7,8 @@ use App\VisitorModel;
 use App\ServicesModel;
 use App\CourseModel;
 use App\ProjectsModel;
+use App\ContactModel;
+use App\ReviewModel;
 
 class HomeController extends Controller
 {
@@ -19,13 +21,37 @@ class HomeController extends Controller
        $ServiceData = json_decode(ServicesModel::all());
        $CourseData = json_decode(CourseModel::orderBy('id','desc')->limit(6)->get());
        $ProjectData = json_decode(ProjectsModel::orderBy('id','desc')->limit(6)->get());
+       $ReviewData = json_decode(ReviewModel::all());
 
 
        return view('Home',[
            'ServiceData' =>$ServiceData,
            'CourseData' =>$CourseData,
-           'ProjectData' =>$ProjectData
+           'ProjectData' =>$ProjectData,
+           'ReviewData' =>$ReviewData
        ]);
+   }
+
+   function contactSend(Request $request){
+       $contact_name=$request->input('contact_name');
+       $contact_mobile=$request->input('contact_mobile');
+       $contact_email=$request->input('contact_email');
+       $contact_msg=$request->input('contact_msg');
+
+       $res = ContactModel::insert([
+             'contact_name' => $contact_name,
+             'contact_mobile' => $contact_mobile,
+             'contact_email' => $contact_email,
+             'contact_msg' => $contact_msg,
+
+       ]);
+       if ($res==true){
+           return 1;
+       }
+       else{
+           return 0;
+       }
+
    }
 
 }

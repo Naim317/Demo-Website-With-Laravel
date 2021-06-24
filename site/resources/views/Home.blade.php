@@ -1,4 +1,5 @@
 @extends('Layout.app')
+@section('title','Home Page')
 
 @section('content')
 
@@ -7,7 +8,6 @@
  @include('Component.HomeCourse')
  @include('Component.HomeProject')
  @include('Component.HomeContact')
- @include('Component.HomeBlog')
  @include('Component.HomeQuote')
 
 

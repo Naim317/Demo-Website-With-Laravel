@@ -261,3 +261,8 @@
     font-size: 12px !important;
     font-weight: 300 ;
 }
+.mapCss{
+    margin-top: 10px;
+    height: 55vh;
+    width: 90vh;
+}

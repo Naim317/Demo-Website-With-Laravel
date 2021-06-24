@@ -40,3 +40,15 @@ Route::post('/ProjectsDelete', 'ProjectController@ProjectsDelete');
 Route::post('/ProjectsDetails', 'ProjectController@getProjectsDetails');
 Route::post('/ProjectsUpdate', 'ProjectController@ProjectsUpdate');
 Route::post('/ProjectsAdd', 'ProjectController@ProjectsAdd');
+
+//Contact Part Management
+
+Route::get('/Contact', 'ContactController@ContactIndex');
+Route::get('/getContactData', 'ContactController@getContactData');
+Route::post('/ContactDelete', 'ContactController@ContactDelete');
+
+//Review Part Management
+
+Route::get('/Review', 'ReviewController@ReviewIndex');
+Route::get('/getReviewData', 'ReviewController@getReviewData');
+Route::post('/ReviewDelete', 'ReviewController@ReviewDelete');
