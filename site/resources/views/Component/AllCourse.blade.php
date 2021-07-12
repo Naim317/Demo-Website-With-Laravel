@@ -10,7 +10,7 @@
                     <h5 class="service-card-title mt-4">{{$CourseData->course_name}}</h5>
                     <h6 class="service-card-subTitle p-0 ">{{$CourseData->course_des}}</h6>
                     <h6 class="service-card-subTitle p-0 ">{{$CourseData->course_fee}} {{$CourseData->course_totalclass}}</h6>
-                    <a href="{{$CourseData->course_link}}"  target="_blank" class="normal-btn-outline mt-2 mb-4 btn">শুরু করুন </a>
+                    <a href="{{$CourseData->course_link}}"  target="_blank" class="normal-btn-outline mt-2 mb-4 btn">Get Start </a>
                 </div>
             </div>
         </div>

@@ -59,9 +59,13 @@ Route::post('/onLogin', 'LoginController@onLogin');
 Route::get('/Logout', 'LoginController@logoutAdmin');
 
 
-//Photo Gellery
+//Photo Gallery
 
-Route::get('/Photo', 'PhotoController@photoIndex');
+Route::get('/Photo', 'PhotoController@photoIndex')->middleware('checkLogin');
+Route::get('/PhotoJsonData', 'PhotoController@photoJsonData')->middleware('checkLogin');
+Route::post('/PhotoUpload', 'PhotoController@PhotoUpload')->middleware('checkLogin');
+Route::post('/photoJsonDataByID/{id}', 'PhotoController@photoJsonDataByID')->middleware('checkLogin');
+Route::post('/photoDelete', 'PhotoController@photoDelete')->middleware('checkLogin');
 
 
 

@@ -2,34 +2,34 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-lg-3 col-sm-6">
-                <h3 class="service-card-title">অনুসরণ </h3>
+                <h3 class="service-card-title">Follow Us </h3>
                 <hr>
-                <p><a target="_blank" href="" class="footer-link"><i class="fab fa-facebook-f"></i> ফেছবুক </a></p>
-                <p><a target="_blank" href="" class="footer-link"><i class="fab fa-youtube"></i> ইউটিউব </a></p>
+                <p><a target="_blank" href="https://www.facebook.com/JNayeem317/" class="footer-link"><i class="fab fa-facebook-f"></i> Facebook </a></p>
+                <p><a target="_blank" href="https://www.youtube.com/user/AddictedA1" class="footer-link"><i class="fab fa-youtube"></i> YouTube </a></p>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-6">
-                <h3 class="service-card-title">ঠিকানা</h3>
+                <h3 class="service-card-title">Address</h3>
                 <hr>
-                <p class="footer-text"><i class="fas fa-map-marker-alt"></i> শেখেরটেক ৮ মোহাম্মদপুর, ঢাকা </p>
-                <p class="footer-text"><i class="fas fa-phone"></i> ০১৭৮৫৩৮৮৯১৯ </p>
-                <p class="footer-text"><i class="fas fa-envelope"></i> Rabbil@Yahoo.com</p>
+                <p class="footer-text"><i class="fas fa-map-marker-alt"></i> 52/8, West Raza Bazar, Dhaka-1207</p>
+                <p class="footer-text"><i class="fas fa-phone"></i> 01737893253 </p>
+                <p class="footer-text"><i class="fas fa-envelope"></i> zpo.nayeem@gmail.com</p>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-6">
-                <h3 class="service-card-title">তথ্য </h3>
+                <h3 class="service-card-title">Information</h3>
                 <hr>
-                <a class="footer-link"  href="{{url('/Contact')}}">যোগাযোগ</a><br>
-                <a class="footer-link"  href="{{url('/Project')}}">প্রজেক্ট সমূহ</a><br>
-                <a class="footer-link"  href="{{url('/Course')}}">কোর্স সমূহ </a><br>
+                <a class="footer-link"  href="{{url('/Contact')}}">Contact Us</a><br>
+                <a class="footer-link"  href="{{url('/Project')}}">Our Projects</a><br>
+                <a class="footer-link"  href="{{url('/Course')}}">Our Courses</a><br>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-6">
-                <h3 class="service-card-title">আইনি</h3>
+                <h3 class="service-card-title">Claim</h3>
                 <hr>
-                <a class="footer-link" href="{{url('/Policy')}}">ফেরত নীতি</a><br>
-                <a class="footer-link"  href="{{url('/Terms')}}">শর্ত সমূহ </a><br>
+                <a class="footer-link" href="{{url('/Policy')}}">Return Policies</a><br>
+                <a class="footer-link"  href="{{url('/Terms')}}">Terms & Conditions</a><br>
             </div>
         </div>
     </div>
 </div>
 <div class="container-fluid bg-dark text-white m-0 text-center p-3">
-    <p class="rights-text  my-2 ">সর্বস্বত্ব রাব্বিল হাসান দ্বারা সংরক্ষিত; ২০১৯-২০২০ </p>
+    <p class="rights-text  my-2 ">© 2021 ZPO TECH LTD All Rights Reserved</p>
 </div>

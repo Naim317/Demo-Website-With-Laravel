@@ -22,23 +22,23 @@
 
 
             <div class="col-md-6">
-                <h3 class="service-card-title text-center">Contact</h3>
+                <h3 class="service-card-title text-center">Help Line</h3>
                 <hr>
-                <p class="footer-text"><i class="fas fa-map-marker-alt"></i> শেখেরটেক ৮ মোহাম্মদপুর, ঢাকা  <i class="fas ml-3 fa-phone"></i> ০১৭৮৫৩৮৮৯১৯  <i class="fas ml-3 fa-envelope"></i> Rabbil@Yahoo.com</p>
+                <p class="footer-text"><i class="fas fa-map-marker-alt"></i>52/8, West Raza Bazar, Dhaka-1207 <i class="fas ml-3 fa-phone"></i> 01737893252  <i class="fas ml-3 fa-envelope"></i> zpo.nayeem@gmail.com</p>
 
                 <div class="form-group " id="contactForm">
-                    <input id="ContactNameID" type="text" class="form-control w-100" placeholder="আপনার নাম">
+                    <input id="ContactNameID" type="text" class="form-control w-100" placeholder="Enter Your Name">
                 </div>
                 <div class="form-group">
-                    <input id="ContactMobileID" type="text" class="form-control  w-100" placeholder="মোবাইল নং ">
+                    <input id="ContactMobileID" type="text" class="form-control  w-100" placeholder="Enter Mobile Number">
                 </div>
                 <div class="form-group">
-                    <input id="ContactEmailID" type="text" class="form-control  w-100" placeholder="ইমেইল ">
+                    <input id="ContactEmailID" type="text" class="form-control  w-100" placeholder="Enter Email">
                 </div>
                 <div class="form-group ">
-                    <input id="ContactMsgID" type="text" class="form-control  w-100" placeholder="মেসেজ ">
+                    <input id="ContactMsgID" type="text" class="form-control  w-100" placeholder="Write Message">
                 </div>
-                <button id="ContactSendBtnID" class="btn mt-5 btn-block normal-btn w-100">পাঠিয়ে দিন </button>
+                <button id="ContactSendBtnID" class="btn mt-5 btn-block normal-btn w-100">Sent</button>
             </div>
 
             </div>

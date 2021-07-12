@@ -7,18 +7,18 @@
         <div class="col-md-4 contact-form">
             <h5 class="service-card-title">Contact Us </h5>
             <div class="form-group " id="contactForm">
-                <input id="ContactNameID" type="text" class="form-control w-100" placeholder="আপনার নাম">
+                <input id="ContactNameID" type="text" class="form-control w-100" placeholder="Enter Your Name">
             </div>
             <div class="form-group">
-                <input id="ContactMobileID" type="text" class="form-control  w-100" placeholder="মোবাইল নং ">
+                <input id="ContactMobileID" type="text" class="form-control  w-100" placeholder="Enter Mobile Number">
             </div>
             <div class="form-group">
-                <input id="ContactEmailID" type="text" class="form-control  w-100" placeholder="ইমেইল ">
+                <input id="ContactEmailID" type="text" class="form-control  w-100" placeholder="Enter  Email ">
             </div>
             <div class="form-group">
-                <input id="ContactMsgID" type="text" class="form-control  w-100" placeholder="মেসেজ ">
+                <input id="ContactMsgID" type="text" class="form-control  w-100" placeholder="Write Message ">
             </div>
-            <button id="ContactSendBtnID" class="btn btn-block normal-btn w-100">পাঠিয়ে দিন </button>
+            <button id="ContactSendBtnID" class="btn btn-block normal-btn w-100"> Send </button>
         </div>
         <div class="col-md-2">
 
