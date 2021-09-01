@@ -14,19 +14,19 @@ class PhotoController extends Controller
 
     function photoJsonData(){
       return PhotoModel::take(8)->get();
-        
+
     }
     function photoDelete(Request $request){
       $OldPhotoURL = $request->input('location');
       $OldPhotoID = $request->input('id');
-     
+
 
       $OldPhotoURLArray = explode("/",$OldPhotoURL);
       $OldPhotoName = end($OldPhotoURLArray);
       $DeletePhotoFile = Storage::delete('public/',$OldPhotoName);
 
       $DeleteFrmDataBase = PhotoModel::where('id', '=', $OldPhotoID)->delete();
-     
+
 
       return $DeleteFrmDataBase;
 
@@ -37,7 +37,7 @@ class PhotoController extends Controller
         $FirstID = $request->id;
         $LastID = $FirstID + 8;
         return PhotoModel::where('id', '>=', $FirstID)->where('id', '<', $LastID)->get();
-          
+
       }
 
 
@@ -47,7 +47,7 @@ class PhotoController extends Controller
         $PhotoName = (explode('/',$photoPath))[1];
 
         $host = $_SERVER['HTTP_HOST'];
-        $location ="http://".$host."/storage/".$PhotoName;
+        $location = "https://" .$host."/storage/".$PhotoName;
         $result = PhotoModel::insert(['location' => $location]);
         return $result;
     }

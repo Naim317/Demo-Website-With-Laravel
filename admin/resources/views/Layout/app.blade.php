@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/toastr.css')}}">
+
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -41,7 +42,8 @@
 
 
 
+
 @yield('script')
-    
+
 </body>
 </html>
